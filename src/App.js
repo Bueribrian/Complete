@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Home from './routes/Home'
+import Login from './routes/Login'
+import Register from './routes/Register'
+import Post from './routes/Post'
+import Profile from './routes/Profile'
+import NotFound from './routes/NotFound'
+import Navbar from './components/Navbar'
+import Categories from './components/Categories'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-function App() {
+export default () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Router>
+      <Navbar />
+      <Categories />
+       <Switch >
+         <Route path='/' exact component={Home} />
+         <Route path='/login' exact component={Login} />
+         <Route path='/register' exact component={Register} />
+         <Route path='/post/:id' component={Post} />
+         <Route path='/profile' exact component={Profile} />
+         <Route component={NotFound} />
+       </Switch>
+      <footer className='footer'>
+        Este es un footer
+      </footer>
+      </Router>
+    </>
+  )
 }
-
-export default App;
