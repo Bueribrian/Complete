@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import tempData from './tempData'
-import galleries from './gallerys'
+import galleriesData from './gallerys'
+
 
 const DataContext = React.createContext()
 
 class DataProvider extends Component {
  state = {
+  isLogged:true,
   loading:true,
   posts:[],
   mostLiked:[],
@@ -14,51 +16,43 @@ class DataProvider extends Component {
   categories:['javascript','php','react','node','css']
  }
 
- getMostLiked(size){
+ getMostLiked(size,data){
   //  Retorno  los post que tiene mas likes de mayor a menor
-   let likesArray = tempData.sort((a,b)=> b.likes - a.likes )
-   let tempoArray = []
-   for(let i = 0; i < size; i++){
-     tempoArray.push(likesArray[i])
-   }
-   return tempoArray
+  console.log(data.length,'impreso desde la funcion getMostLiked')
+  if(data.length > 0){
+    let likesArray = data.sort((a,b)=> b.likes - a.likes )
+    let tempoArray = []
+    for(let i = 0; i < size; i++){
+      tempoArray.push(likesArray[i])
+    }
+    return tempoArray
+  }else{
+    return ''
+  }
  }
 
- getRecentPost(size){
+ getRecentPost(size, data){
   let recentPostsArray = []
   // Inserta los ultimos post del arreglo al nuevo arreglo
-  for(let i = tempData.length -1; i >= tempData.length - size; i--){recentPostsArray.push(tempData[i])}
+  for(let i = data.length -1; i >= data.length - size; i--){recentPostsArray.push(data[i])}
   // Retorna el array revertido para que tenga mejor UX
   return recentPostsArray.reverse()
  }
  
- getGalleries(size){
-   let tempoArray = []
-   let count = 0
-   while(count < size){
-      let random = Math.floor(Math.random()*galleries.length - 1)
-      tempoArray.push(galleries[random])
-      count++
-   }
-  return tempoArray
- }
+
  componentDidMount(){
    console.log(this.state,'\n Antes de cargar')
    let posts = [...tempData.map(item=>item)]
-   let mostLiked = this.getMostLiked(5)
-   let recentPosts = this.getRecentPost(8)
-   let galleries = this.getGalleries(3)
+   let mostLiked = this.getMostLiked(5,tempData)
+   let recentPosts = this.getRecentPost(8,tempData)
+   let galleries = this.getMostLiked(3,galleriesData)
     this.setState({
+      loading:false,
       posts,
       mostLiked,
       recentPosts,
       galleries
     })
-  setTimeout(()=>this.setState({
-    loading:false
-  }),2000)
-  
-  
  }
   render() {
     return (

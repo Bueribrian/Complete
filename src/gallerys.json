@@ -2,51 +2,61 @@
  {
   "id": 1,
   "title": "Lamar",
-  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff",
+  "likes":2
  },
  {
   "id": 2,
   "title": "Philis",
-  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+  "likes":24
  },
  {
   "id": 3,
   "title": "Rolando",
-  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+  "likes":33
  },
  {
   "id": 4,
   "title": "Prentice",
-  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff",
+  "likes":55
  },
  {
   "id": 5,
   "title": "Gabe",
-  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff",
+  "likes":12
  },
  {
   "id": 6,
   "title": "Marlon",
-  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff",
+  "likes":33
  },
  {
   "id": 7,
   "title": "Wilbur",
-  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/ff4444/ffffff",
+  "likes":13
  },
  {
   "id": 8,
   "title": "Angelita",
-  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+  "likes":24
  },
  {
   "id": 9,
   "title": "Nora",
-  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+  "likes":53
  },
  {
   "id": 10,
   "title": "Perry",
-  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff"
+  "categorie_image": "http://dummyimage.com/500x500.png/5fa2dd/ffffff",
+  "likes":33
  }
 ]
